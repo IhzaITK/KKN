@@ -59,3 +59,35 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+
+TUTORIAL
+
+
+1. composer install
+2. npm install
+3. npm run dev
+4. php artisan migrate
+5. php artisan serve
+selesai run
+akses 127.0.0.1:8000/login untuk masuk ke admin atau ke tab informasi dan dibawah di informasi selengkapnya ada ikon user klik ikon dan masuk ke login admin
+
+JIIKA TIDAK ADA AKUN USER JALANKAN
+php artisan tinker
+
+copy paste ini
+DB::table('users')->insert(['name'=>'Admin','email'=>'admin@gm.com','password'=>Hash::make('12345678')])
+
+
+
+ada database yang kurang pas migrate jdi di phpMyAdmin di import aja file yng sdh dikasi tadi atau kalua perlu hapus dlu database webkkn trs buat baru webkkn import file webkkn.sql
+
+terus Ketika mencoba upload data di admin jika gambar tidak muncul harus lakukan ini
+
+di folder webkkn ke folder /public trs delete folder storage
+
+terus ketik php artisan storage:link
+
