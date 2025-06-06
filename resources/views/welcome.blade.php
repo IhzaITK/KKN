@@ -82,21 +82,21 @@
 	</div>
 
 	<!-- Start Slider -->
-	<div class="relative w-full overflow-hidden">
+	<div class="relative w-full h-[600px] overflow-hidden">
 		<div class="relative h-64 sm:h-96">
-			<div class="absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100" id="slide1">
+			<div class="absolute inset-0 transition-opacity duration-800 ease-in-out opacity-100" id="slide1">
 				<img alt="Banner image showing KATALOG UMKM Kelurahan Klandasan Ilir with vibrant local market scene"
-					class="w-full h-full object-cover brightness-90" height="600"
+					class="w-full h-[900px] object-cover brightness-90" height="600"
 					src="https://storage.googleapis.com/a1aa/image/d58038fe-11e2-4f69-9703-e82c2391f50f.jpg"
 					width="1920" />
 				<div
 					class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent flex flex-col justify-center items-center text-center px-4">
-					<h1 class="text-white text-5xl sm:text-7xl font-extrabold leading-tight drop-shadow-lg">
+					<h1 class="text-white top-[100px] text-5xl sm:text-7xl font-extrabold leading-tight drop-shadow-lg">
 						KATALOG
 						<br />
 						UMKM
 					</h1>
-					<p class="text-white text-xl sm:text-3xl mt-4 drop-shadow-md">
+					<p class="text-white absolute top-[400px] text-xl sm:text-3xl mt-4 drop-shadow-md">
 						Kelurahan Klandasan Ilir
 					</p>
 				</div>
@@ -106,49 +106,47 @@
 	<!-- End Slider -->
 
 	<!-- Start Members Grid -->
-	<main class="container mx-auto px-4 py-12">
-		<h1 class="text-3xl font-bold text-center mb-6">
-			Data UMKM
-		</h1>
-		<p class="text-center text-gray-600 mb-6 max-w-2xl mx-auto">
+	<main class="container mx-auto px-8 py-12">
+		<p class="text-center text-gray-600 mb-16 max-w-2xl text-[18px] mx-auto">
 			Jelajahi berbagai produk dan jasa dari UMKM Klandasan Ilir yang penuh inovasi, kreativitas, dan cita rasa
 			khas
 			yang tak terlupakan.
 		</p>
 		<!-- Filters -->
-		<form method="GET" action="{{ route('welcome') }}" class="max-w-4xl mx-auto mb-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div class="w-full sm:w-1/2">
-                <label class="block mb-2 font-semibold text-gray-700" for="search">Cari</label>
-                <input type="text" name="search" id="search" value="{{ request('search') }}" placeholder="Cari disini"
-                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div class="w-full sm:w-1/2">
-                <label class="block mb-2 font-semibold text-gray-700" for="filterRT">Pilih RT</label>
-                <select name="filterRT" id="filterRT" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option value="all" {{ request('filterRT') == 'all' ? 'selected' : '' }}>Semua RT</option>
+		<form method="GET" action="{{ route('welcome') }}" class="max-w-7xl mx-auto mb-10 flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-end">
+			<div class="flex-1 min-w-[200px]">
+				<label class="block mb-2 font-semibold text-gray-700" for="search">Cari</label>
+				<input type="text" name="search" id="search" value="{{ request('search') }}" placeholder="Cari disini"
+					class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+			</div>
+			<div class="flex-1 min-w-[200px]">
+				<label class="block mb-2 font-semibold text-gray-700" for="filterRT">Pilih RT</label>
+				<select name="filterRT" id="filterRT"
+					class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+					<option value="all" {{ request('filterRT') == 'all' ? 'selected' : '' }}>Semua RT</option>
 					@for ($i = 1; $i <= 63; $i++)
-						@php
-							$rtValue = str_pad($i, 2, '0', STR_PAD_LEFT);
-						@endphp
+						@php $rtValue = str_pad($i, 2, '0', STR_PAD_LEFT); @endphp
 						<option value="rt{{ $rtValue }}" {{ request('filterRT') == 'rt' . $rtValue ? 'selected' : '' }}>RT {{ $rtValue }}</option>
 					@endfor
-                </select>
-            </div>
-            <div class="w-full sm:w-1/2">
-                <label class="block mb-2 font-semibold text-gray-700" for="filterType">Pilih Jenis Usaha</label>
-                <select name="filterType" id="filterType" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option value="all" {{ request('filterType') == 'all' ? 'selected' : '' }}>Semua Jenis Usaha</option>
-                    <option value="makanan" {{ request('filterType') == 'makanan' ? 'selected' : '' }}>Makanan</option>
-                    <option value="minuman" {{ request('filterType') == 'minuman' ? 'selected' : '' }}>Minuman</option>
-                    <option value="kerajinan" {{ request('filterType') == 'kerajinan' ? 'selected' : '' }}>Kerajinan</option>
-                    <option value="fashion" {{ request('filterType') == 'fashion' ? 'selected' : '' }}>Fashion</option>
-                    <option value="jasa" {{ request('filterType') == 'jasa' ? 'selected' : '' }}>Jasa</option>
-                </select>
-            </div>
-            <div class="flex items-end">
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded h-10">Filter</button>
-            </div>
-        </form>
+				</select>
+			</div>
+			<div class="flex-1 min-w-[200px]">
+				<label class="block mb-2 font-semibold text-gray-700" for="filterType">Pilih Jenis Usaha</label>
+				<select name="filterType" id="filterType"
+					class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+					<option value="all" {{ request('filterType') == 'all' ? 'selected' : '' }}>Semua Jenis Usaha</option>
+					<option value="makanan" {{ request('filterType') == 'makanan' ? 'selected' : '' }}>Makanan</option>
+					<option value="minuman" {{ request('filterType') == 'minuman' ? 'selected' : '' }}>Minuman</option>
+					<option value="kerajinan" {{ request('filterType') == 'kerajinan' ? 'selected' : '' }}>Kerajinan</option>
+					<option value="fashion" {{ request('filterType') == 'fashion' ? 'selected' : '' }}>Fashion</option>
+					<option value="jasa" {{ request('filterType') == 'jasa' ? 'selected' : '' }}>Jasa</option>
+				</select>
+			</div>
+			<div>
+				<button type="submit"
+					class="bg-blue-600 text-white px-4 py-2 rounded h-10">Filter</button>
+			</div>
+		</form>
 
 		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="membersGrid">
 			@foreach($umkms as $umkm)
@@ -181,80 +179,43 @@
 	</main>
 	<!-- End Members Grid -->
 	<!-- Start Footer  -->
-	<footer class="bg-white px-14 py-4">
-		<div class="container mx-auto">
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div>
-					<h4 class="text-lg font-semibold mb-3">
-						Informasi Selengkapnya
-					</h4>
-					<ul class="space-y-2">
-						<li>
-							<a class="hover:text-blue-600" href="#">
-								Terms &amp; Conditions
-							</a>
-						</li>
-						<li>
-							<a class="hover:text-blue-600" href="#">
-								Privacy Policy
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<h4 class="text-lg font-semibold mb-3">
-						Kontak Kami
-					</h4>
-					<ul class="space-y-4">
-						<li class="flex items-start space-x-3">
-							<i class="fas fa-map-marker-alt mt-1 text-blue-600">
-							</i>
-							<p>
-								Alamat: Jl. Gajah Mada RT. 27 NO. 53 
-								<br />
-								Kelurahan Klandasan Ilir, Kecamatan Balikpapan Kota
-								<br />
-								Kode Pos 76113
-							</p>
-						</li>
-						<li class="flex items-center space-x-3">
-							<i class="fas fa-envelope text-blue-600">
-							</i>
-							<a class="hover:text-blue-600" href="mailto:kelklandasanilir01@gmail.com">
-								kelklandasanilir01@gmail.com
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<h3 class="text-xl font-semibold mb-4">
-						Media Sosial
-					</h3>
-					<div class="flex space-x-4 text-gray-600 text-2xl">
-						<a aria-label="Facebook" class="hover:text-blue-600" href="https://www.facebook.com/kelurahan.klandasanilir/">
-							<i class="fab fa-facebook">
-							</i>
+	<footer class="bg-white text-center py-4 text-gray-600 text-sm">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 ml-20 justify-center">
+			<!-- Kontak Kami -->
+			<div>
+				<h4 class="text-lg font-semibold mb-3 -ml-8 text-center">Kontak Kami</h4>
+				<ul class="space-y-4 ml-64 text-left">
+					<li class="flex items-start space-x-4">
+						<i class="fas fa-map-marker-alt mt-1 text-blue-600"></i>
+						<p>
+							Alamat: Jl. Gajah Mada RT. 27 NO. 53
+							<br />
+							Kelurahan Klandasan Ilir, Kecamatan Balikpapan Kota
+							<br />
+							Kode Pos 76113 
+						</p>
+					</li>
+					<li class="flex items-center space-x-3">
+						<i class="fas fa-envelope text-blue-600"></i>
+						<a class="hover:text-blue-600" href="mailto:kelklandasanilir01@gmail.com">
+							kelklandasanilir01@gmail.com
 						</a>
-						<a aria-label="Instagram" class="hover:text-blue-400" href="https://www.instagram.com/kelurahanklandasanilir/">
-							<i class="fab fa-instagram">
-							</i>
-						</a>
-						<a aria-label="LinkedIn" class="hover:text-blue-700" href="#">
-							<i class="fab fa-linkedin">
-							</i>
-						</a>
-						<a aria-label="Youtube" class="hover:text-red-600" href="https://www.youtube.com/@PemerintahKotaBalikpapan">
-							<i class="fab fa-youtube">
-							</i>
-						</a>	
-						<a aria-label="WhatsApp" class="hover:text-green-600" href="#">
-							<i class="fab fa-whatsapp">
-							</i>
-						</a>
-					</div>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Media Sosial -->
+			<div>
+				<h3 class="text-xl font-semibold -ml-60 mb-4">Media Sosial</h3>
+				<div class="flex justify-left ml-44 space-x-4 text-gray-600 text-2xl">
+					<a aria-label="Facebook" class="hover:text-blue-600" href="https://www.facebook.com/kelurahan.klandasanilir/">
+					<i class="fab fa-facebook"></i>
+					</a>
+					<a aria-label="Instagram" class="hover:text-blue-400" href="https://www.instagram.com/kelurahanklandasanilir/">
+					<i class="fab fa-instagram"></i>
+					</a>
 				</div>
 			</div>
-		</div>
 		</div>
 	</footer>
 	<!-- End Footer  -->
