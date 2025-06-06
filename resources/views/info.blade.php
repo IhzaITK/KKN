@@ -92,92 +92,59 @@
 					<h4 class="font-semibold text-lg mb-1">150+ Produk Unggulan</h4>
 				</div>
 			</div>
-			<div class="mt-12 text-gray-600 text-sm">
+			<div class="mt-12 py-8 text-gray-600 text-sm">
 				Bersama tingkatkan potensi UMKM Klandasan Ilir dalam memajukan ekonomi masyarakat!
 			</div>
 		</section>
 	</main>
 
 	<!-- Start Footer  -->
-	<footer class="bg-white px-14 py-4">
-		<div class="container mx-auto">
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div>
-					<h4 class="text-lg font-semibold mb-3">
-						Informasi Selengkapnya
-					</h4>
-					<ul class="space-y-2">
-						<li>
-							<a class="hover:text-blue-600" href="#">
-								Terms &amp; Conditions
-							</a>
-						</li>
-						<li>
-							<a class="hover:text-blue-600" href="#">
-								Privacy Policy
-							</a>
-						</li>
-						<li>
-							<a class="hover:text-blue-600" href="{{ route('login') }}">
-							<i class="fa fa-user" aria-hidden="true"></i>						
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<h4 class="text-lg font-semibold mb-3">
-						Kontak Kami
-					</h4>
-					<ul class="space-y-4">
-						<li class="flex items-start space-x-3">
-							<i class="fas fa-map-marker-alt mt-1 text-blue-600">
-							</i>
-							<p>
-								Alamat: Jl. Gajah Mada RT. 27 NO. 53
-								<br />
-								Kelurahan Klandasan Ilir, Kecamatan Balikpapan Kota
-								<br />
-								Kode Pos 76113
-							</p>
-						</li>
-						<li class="flex items-center space-x-3">
-							<i class="fas fa-envelope text-blue-600">
-							</i>
-							<a class="hover:text-blue-600" href="mailto:kelklandasanilir01@gmail.com">
-								kelklandasanilir01@gmail.com
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<h3 class="text-xl font-semibold mb-4">
-						Media Sosial
-					</h3>
-					<div class="flex space-x-4 text-gray-600 text-2xl">
-						<a aria-label="Facebook" class="hover:text-blue-600" href="https://www.facebook.com/kelurahan.klandasanilir/">
-							<i class="fab fa-facebook">
-							</i>
+	<footer class="bg-white text-center py-4 text-gray-600 text-sm">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 ml-20 justify-center">
+			<!-- Kontak Kami -->
+			<div>
+				<h4 class="text-lg font-semibold mb-3 -ml-8 text-center ">Kontak Kami</h4>
+				<ul class="space-y-4 ml-64 text-left">
+					<li class="flex items-start space-x-4">
+						<i class="fas fa-map-marker-alt mt-1 text-blue-600"></i>
+						<p>
+							Alamat: Jl. Gajah Mada RT. 27 NO. 53
+							<br />
+							Kelurahan Klandasan Ilir, Kecamatan Balikpapan Kota
+							<br />
+							Kode Pos 76113 
+						</p>
+					</li>
+					<li class="flex items-center space-x-3">
+						<i class="fas fa-envelope text-blue-600"></i>
+						<a class="hover:text-blue-600" href="mailto:kelklandasanilir01@gmail.com">
+							kelklandasanilir01@gmail.com
 						</a>
-						<a aria-label="Instagram" class="hover:text-blue-400" href="https://www.instagram.com/kelurahanklandasanilir/">
-							<i class="fab fa-instagram">
-							</i>
-						</a>
-						<a aria-label="LinkedIn" class="hover:text-blue-700" href="#">
-							<i class="fab fa-linkedin">
-							</i>
-						</a>
-						<a aria-label="Youtube" class="hover:text-red-600" href="https://www.youtube.com/@PemerintahKotaBalikpapan">
-							<i class="fab fa-youtube">
-							</i>
-						</a>	
-						<a aria-label="WhatsApp" class="hover:text-green-600" href="#">
-							<i class="fab fa-whatsapp">
-							</i>
-						</a>
-					</div>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Media Sosial -->
+			<div>
+				<h3 class="text-xl font-semibold -ml-60 mb-4">Media Sosial</h3>
+				<div class="flex justify-left ml-44 space-x-4 text-gray-600 text-2xl">
+					<a aria-label="Facebook" class="hover:text-blue-600" href="https://www.facebook.com/kelurahan.klandasanilir/">
+					<i class="fab fa-facebook"></i>
+					</a>
+					<a aria-label="Instagram" class="hover:text-blue-400" href="https://www.instagram.com/kelurahanklandasanilir/">
+					<i class="fab fa-instagram"></i>
+					</a>
 				</div>
 			</div>
-		</div>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div class="absolute left-10">
+					<li>
+						<a class="hover:text-blue-600" href="{{ route('login') }}">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</a>
+					</li>
+				</div>
+			</div>
 		</div>
 	</footer>
 	<!-- End Footer  -->
